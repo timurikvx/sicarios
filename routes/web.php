@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\EventsController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MemberController;
 
 Route::get('/', function () {

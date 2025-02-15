@@ -16,7 +16,7 @@ import photo from "./components/store/photo.js";
 
 const store = createStore({
     state: {
-        test: 'Хуй',
+        test: 'Sicarios',
         error: '',
         windows:{
             image: false,
