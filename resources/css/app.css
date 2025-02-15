@@ -1,0 +1,508 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: "Oswald", sans-serif;
+    background-color: #1b1b1b;
+    color: #cccccc;
+}
+
+a{
+    display: block;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    color: #ccc;
+    padding-bottom: 10px;
+}
+
+.header .menu-item{
+    align-self: center;
+}
+
+.header .menu-item.current{
+    @apply font-bold;
+}
+
+.sicarios-img{
+    height: 100px;
+    min-width: 150px;
+}
+
+.player .active{
+    background-color: #a3e5aa;
+}
+
+.track-logo{
+    min-height: 225px;
+}
+
+.track-logo .wrap{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.15s;
+    opacity: 0;
+}
+
+.track-logo:hover .wrap{
+    opacity: 0.8;
+}
+
+.disabled{
+    color: #696969;
+}
+
+.p-bottom{
+    padding-bottom: 100px;
+}
+
+.player{
+    background-color: rgb(66 110 109 / 83%);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    user-select: none;
+    z-index: 1000;
+}
+
+.player .main{
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+}
+
+.player .progress{
+    height: 8px;
+    width: 100%;
+
+}
+
+.player .progress .value{
+    background-color: #e15757;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.auth{
+    width: 400px;
+    height: 300px;
+}
+
+.auth .grid{
+    grid-template-columns: 80px 1fr;
+}
+
+.input{
+    padding: 6px 8px;
+    outline: none;
+    border: 1px solid #444;
+    color: #2b2b2b;
+}
+
+.button{
+    padding: 8px 14px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 100;
+    background-color: #444;
+    transition: 0.3s;
+}
+
+.button:hover{
+    background-color: #5d5d5d;
+}
+
+.button.green{
+    background-color: #448f77;
+    color: #e5e5e5;
+}
+
+.button.red{
+    background-color: #ce263e;
+    color: #e5e5e5;
+}
+
+.button.green:hover{
+    background-color: #53af91;
+}
+
+.alert{
+    background-color: #ffbcbc;
+    color: #e15757;
+}
+
+.container{
+    /*max-width: 1200px;*/
+    width: 95%;
+    @apply mx-auto;
+}
+
+@media screen and (min-width: 700px){
+    .container{
+        max-width: 1200px;
+        width: 80%;
+        @apply mx-auto;
+    }
+}
+
+.area{
+    background-color: #232323;
+    border: 1px solid #292929;
+}
+
+.play{
+    background-image: url("/public/storage/icon/play.png");
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    user-select: none;
+}
+
+.play.min{
+    width: 24px;
+    height: 24px;
+    background-size: 98%;
+}
+
+.pause{
+    background-image: url("/public/storage/icon/pause.png");
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    user-select: none;
+}
+
+.pause.min{
+    width: 24px;
+    height: 24px;
+    background-size: 98%;
+}
+
+.prev{
+    background-image: url("/public/storage/icon/prev.png");
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    user-select: none;
+}
+
+.next{
+    background-image: url("/public/storage/icon/next.png");
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    user-select: none;
+}
+
+.border-top{
+    border-top: 1px solid #444;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #444;
+}
+
+.gallery{
+    max-width: 1200px;
+    @apply mx-auto;
+    /*padding-bottom: 20px;*/
+}
+
+.gallery.down{
+    padding-bottom: 100px;
+}
+
+.gallery > div{
+    justify-content: flex-start;
+}
+
+.gallery .item{
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+}
+
+@media screen and (min-width: 700px){
+    .gallery .item{
+        width: 31.33%;
+        margin-right: 2%;
+        margin-bottom: 3%;
+    }
+}
+
+.gallery .item .year{
+    color: #555555c4;
+    font-size: 15px;
+}
+
+.scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tab{
+    background-color: #5b6d8a;
+    font-size: 120%;
+}
+
+.tab.current{
+    background-color: #3d5e89;
+}
+
+.error{
+    @apply m-auto;
+    position: fixed;
+    width: 80%;
+    max-width: 500px;
+    height: 70%;
+    max-height: 800px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.error .head{
+    background-color: #a61e31;
+    @apply p-2;
+}
+
+.error .content{
+    background-color: #ce263e;
+    font-family: 'Oswald';
+    white-space: break-spaces;
+    @apply p-4;
+}
+
+.error .close{
+    background-image: url("/public/storage/icon/close.png");
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+.image_event{
+    /*height: 160px;*/
+    max-height: 300px;
+    width: 100%;
+    @apply mx-auto;
+}
+
+
+.image_event_h{
+    height: 320px;
+}
+
+.event_item{
+    background-color: #232323;
+    border: 1px solid #292929;
+    @apply p-4 mb-4;
+}
+
+.photo{
+    max-height: 250px;
+    max-width: 350px;
+}
+
+.photo_wrap{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.photo_close{
+    display: none;
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    right: 0;
+    background-image: url("/public/storage/icon/close.png");
+    width: 35px;
+    height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+/*@media screen and (min-width: 700px){*/
+/*    .image_min{*/
+/*        max-width: 25%;*/
+/*    }*/
+/*}*/
+
+
+.image_min:hover .photo_close{
+    display: block;
+}
+
+.image_min:hover .photo_wrap{
+    background-color: #c4c4c436;
+}
+
+.image_show{
+    display: flex;
+    position: fixed;
+    width: 1250px;
+    max-width: 80%;
+    height: 950px;
+    max-height: 80%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #232323;
+    border: 1px solid #292929;
+    padding: 1rem;
+    z-index: 100;
+    margin-bottom: 24%;
+}
+
+@media screen and (min-width: 700px){
+    .image_show{
+        display: flex;
+        position: fixed;
+        width: 1250px;
+        max-width: 80%;
+        height: 950px;
+        max-height: 75%;
+        margin: auto;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #232323;
+        border: 1px solid #292929;
+        @apply p-4;
+        z-index: 100;
+        margin-bottom: 10%;
+    }
+}
+
+.image_show img{
+    max-height: 100%;
+    margin: auto;
+}
+
+.image_show .name {
+    position: absolute;
+    bottom: 2%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.image_move{
+    width: 25%;
+    background-color: #71727238;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 700px){
+    .image_move{
+        width: 15%;
+        background-color: #71727238;
+        top: 0;
+        bottom: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: 0.3s;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+.image_show .next_image{
+    background-image: url("/public/storage/icon/next_image.png");
+    right: 0;
+}
+
+.image_show .prev_image{
+    background-image: url("/public/storage/icon/prev_image.png");
+    left: 0;
+}
+
+.image_show .prev_image:hover, .image_show .next_image:hover{
+    opacity: 1;
+}
+
+.vk_ref{
+    background-image: url("/public/storage/vk.png");
+    width: 30px;
+    height: 30px;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ya_ref{
+    background-image: url("/public/storage/yandex_music_icon_ru_darkbg.png");
+    width: 30px;
+    height: 30px;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.member_photo{
+    max-width: 300px;
+    max-height: 450px;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.bottom-line{
+    border-bottom: 1px solid #333;
+}
+
+@media screen and (min-width: 400px){
+    .video{
+        height: 200px;
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .video{
+        height: 300px;
+        width: 550px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .video{
+        height: 550px;
+        width: 1100px;
+    }
+}
